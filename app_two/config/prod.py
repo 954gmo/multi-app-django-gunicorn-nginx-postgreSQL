@@ -19,10 +19,10 @@ ALLOWED_HOSTS = ['sixdigit.net', 'www.sixdigit.net']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DATABASE_app_two'),
-        'USER': os.getenv('DB_USER_app_two'),
-        'PASSWORD': os.getenv('DB_PASS_app_two'),
-        'HOST': os.getenv('DB_HOST_app_two'),
-        'PORT': os.getenv('DB_PORT_app_two'),
+        'NAME': os.getenv('DATABASE'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASS'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
