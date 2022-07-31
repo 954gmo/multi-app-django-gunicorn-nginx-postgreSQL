@@ -14,15 +14,15 @@ SECRET_KEY = 'django-insecure-caebb+zs_ai6s@q#%90%+(p4e78w5khn5k8+9)vlznx+mg9ubl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['195.88.57.130', 'localhost', 'blog.sixdigit.net']
+ALLOWED_HOSTS = ['sixdigit.net', 'www.sixdigit.net']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DATABASE'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASS'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': os.getenv('DATABASE_app_two'),
+        'USER': os.getenv('DB_USER_app_two'),
+        'PASSWORD': os.getenv('DB_PASS_app_two'),
+        'HOST': os.getenv('DB_HOST_app_two'),
+        'PORT': os.getenv('DB_PORT_app_two'),
     }
 }

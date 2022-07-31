@@ -6,7 +6,7 @@ from __future__ import print_function
 __ENTITY_author__ = "SIX DIGIT INVESTMENT GROUP"
 __author__ = "GWONGZAN"
 
-import os
+from pathlib import Path
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-caebb+zs_ai6s@q#%90%+(p4e78w5khn5k8+9)vlznx+mg9ubl'
@@ -14,15 +14,14 @@ SECRET_KEY = 'django-insecure-caebb+zs_ai6s@q#%90%+(p4e78w5khn5k8+9)vlznx+mg9ubl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['195.88.57.130', 'localhost', 'blog.sixdigit.net']
+ALLOWED_HOSTS = []
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DATABASE'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASS'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
