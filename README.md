@@ -5,7 +5,7 @@
 ## [Part Two: serving multiple Django applications with Nginx, Gunicorn and supervisor](#Part-Two)
 ## [Reference](#Reference)
 
-#Part One
+# Part One
 ## **Setting Up Django with Postgres, Nginx, and Gunicorn on Ubuntu 22.04**
 ## Content
 [Prerequisites](#Prerequisites)
@@ -206,7 +206,7 @@ sudo rm -r /webapps/django_app_one
 ```
 [Content](#Part-One)
 
-#Part Two
+# Part Two
 ## Serving multiple Django applications with Nginx, Gunicorn and supervisor
 ## Content
 [Create a virtual environment for each app](#Create-a-virtual-environment-for-each-app)
