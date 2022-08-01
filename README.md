@@ -206,7 +206,7 @@ sudo rm -r /webapps/django_app_one
 ```
 [Content](#Part-One)
 
-# Part Two
+#Part Two
 ## Serving multiple Django applications with Nginx, Gunicorn and supervisor
 ## Content
 [Create a virtual environment for each app](#Create-a-virtual-environment-for-each-app)
@@ -219,7 +219,7 @@ sudo rm -r /webapps/django_app_one
 
 [Create Nginx virtual servers](#Create-Nginx-virtual-servers)
 
-
+[Top](#Introduction)
 
 ##Create a virtual environment for each app
 
