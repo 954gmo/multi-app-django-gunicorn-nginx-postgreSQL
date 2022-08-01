@@ -221,11 +221,11 @@ sudo rm -r /webapps/django_app_one
 
 [Top](#Introduction)
 
-##Create a virtual environment for each app
+## Create a virtual environment for each app
 
 [Content](#Part-Two)
 
-##Create system accounts for the webapps
+## Create system accounts for the webapps
 ```shell
 sudo groupadd --system webapps
 sudo useradd --system --gid webapps -m -d /webapps/app_one app_one
@@ -235,14 +235,14 @@ sudo chown -R app_two:www-data /webapps/app_two
 ```
 [Content](#Part-Two)
 
-##Create gunicorn start scripts
+## Create gunicorn start scripts
 ```shell
 vi /webapps/app_one/bin/gunicorn.start.sh
 vi /webapps/app_two/bin/gunicorn.start.sh
 ```
 [Content](#Part-Two)
 
-##Create Supervisor configuration files and start the apps
+## Create Supervisor configuration files and start the apps
 ```shell
 sudo vi /etc/supervisor/conf.d/app_one.conf
 sudo vi /etc/supervisor/conf.d/app_two.conf
@@ -254,7 +254,7 @@ sudo supervisorctl start app_two
 
 [Content](#Part-Two)
 
-##Create Nginx virtual servers
+## Create Nginx virtual servers
 ```shell
 sudo vi /etc/nginx/sites-available/app_one
 sudo vi /etc/nginx/sites-available/app_two
