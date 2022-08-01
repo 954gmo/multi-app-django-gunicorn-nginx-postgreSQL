@@ -36,7 +36,7 @@
 * Ubuntu 22.04 server instance with a basic firewall and a non-root user with `sudo` privileges configured. 
 * python 3.10.4
 
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Installing the packages from the Ubuntu repositories
 ```shell
@@ -63,14 +63,14 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)
 sudo apt-get update && apt-get -y install postgresql-13 python3-pip \
                python3-dev libpq-dev  postgresql-contrib-13 nginx curl
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Creating a database user and a new database for the app
 ```shell
 # should create an DB_init.sql first using Docs/settings/GenDBSQL.sh
 sudo  -u postgres psql -f DB_init.sql 
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Creating application user
 ```shell
@@ -78,13 +78,13 @@ sudo groupadd --system webapps
 #useradd --system --gid webapps --shell /bin/bash -m -d /webapps/django_app_one app_one
 sudo useradd --system --gid webapps -m -d /webapps/<name-for-the-webapps> <application-user>
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Allowing other users write access to the application directory
 ```shell
 chown -R app_one:www-data /webapps/hello_django
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Creating a virtual environment for your app
 ```shell
@@ -96,7 +96,7 @@ pip freeze > requirements.txt
 # use this cmd when deploy to the VPS 
 pip install -r requirements.txt
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Database configuration
 ```shell
@@ -123,7 +123,7 @@ sudo vi /etc/postgresql/13/main/postgresql.conf
 sudo vi /etc/postgresql/13/main/pg_hba.conf  
 
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Creating an empty Django project
 ```shell
@@ -154,7 +154,7 @@ python manage.py createspueruser
 python manage.py collectstatic
 
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Configuring gunicorn
 ```shell
@@ -167,7 +167,7 @@ cd ~
 vi gunicorn.start.sh
 chmod u+x gunicorn.start.sh
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Starting and monitoring with supervisor
 ```shell
@@ -182,7 +182,7 @@ sudo supervisorctl stop <app-name>
 sudo supervisorctl start <app-name>
 sudo supervisorctl restart <app-name>
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Creating a nginx virtual server configuration for Django
 ```shell
@@ -191,7 +191,7 @@ ln -s /etc/nginx/sites-available/app_one /etc/nginx/sites-enabled/app_one
 sudo nginx -t 
 sudo systemctl restart nginx
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 ## Uninstalling the Django application
 ```shell
@@ -204,7 +204,7 @@ sudo rm /etc/supervisor/conf.d/hello.conf
 # if you never plan to use this application again, you can remove its entire directory
 sudo rm -r /webapps/django_app_one
 ```
-[Content](#Part One)
+[Content](#Part-One)
 
 # Part Two
 ## Serving multiple Django applications with Nginx, Gunicorn and supervisor
@@ -223,7 +223,7 @@ sudo rm -r /webapps/django_app_one
 
 ##Create a virtual environment for each app
 
-[Content](#Part Two)
+[Content](#Part-Two)
 
 ##Create system accounts for the webapps
 ```shell
@@ -233,14 +233,14 @@ sudo useradd --system --gid webapps -m -d /webapps/app_two app_two
 sudo chown -R app_one:www-data /webapps/app_one
 sudo chown -R app_two:www-data /webapps/app_two
 ```
-[Content](#Part Two)
+[Content](#Part-Two)
 
 ##Create gunicorn start scripts
 ```shell
 vi /webapps/app_one/bin/gunicorn.start.sh
 vi /webapps/app_two/bin/gunicorn.start.sh
 ```
-[Content](#Part Two)
+[Content](#Part-Two)
 
 ##Create Supervisor configuration files and start the apps
 ```shell
@@ -252,7 +252,7 @@ sudo supervisorctl start app_one
 sudo supervisorctl start app_two
 ```
 
-[Content](#Part Two)
+[Content](#Part-Two)
 
 ##Create Nginx virtual servers
 ```shell
@@ -262,7 +262,7 @@ sudo ln -s /etc/nginx/sites-available/app_one /etc/nginx/sites-enabled/app_one
 sudo ln -s /etc/nginx/sites-available/app_two /etc/nginx/sites-enabled/app_two
 sudo systemctl restart nginx
 ```
-[Content](#Part Two)
+[Content](#Part-Two)
 
 
 # Reference
